@@ -1,0 +1,140 @@
+body {
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    color: #767e9e;
+    margin: 0;
+    width: 100%;
+}
+
+h2, h3{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/*----- Container----- */
+.container {
+  width: 100%;
+  max-width: 1020px;
+  padding: 0 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ------Portfolio------*/
+.portfolio{
+    height: 864px;
+    background-color: #2d303a;
+    border-bottom: solid 6px #323746;
+}
+
+.portfolio-titel{
+    font-weight: 900;
+    font-size: 30px;
+    padding-top: 60px;
+    letter-spacing: -0.1px;
+}
+
+.portfolio-text{
+    letter-spacing: -0.23px;
+    padding-top: 4px;
+}
+
+.portfolio-tags {
+    margin-top: -5px;
+    margin-left: 1px;
+}
+
+.tag{
+    background-color: inherit;
+    color: inherit;
+    font-size: 12px;
+    line-height: 12px;;
+    font-family: 'Lato';
+    font-weight: 400;
+    letter-spacing: -0.25px;
+
+    border-radius: 5px;
+    border: solid 1px #767e9e;
+
+    padding: 4px 6.6px 4px;
+    margin-right: 8px;
+    margin-bottom: 18.5px;
+
+    cursor: pointer;
+}
+
+.first-tag{
+    color:#fff;
+    border-color: #fff;
+}
+
+.tag:hover{
+    color:#fff;
+    border-color: #fff; 
+}
+
+.flex-portfolio {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.portfolio-img {
+    width: 220px;
+    height: 187px;
+    margin-bottom: 20px;    
+}
+
+/*------About US-------*/
+.About_Us{
+    height: 730px;
+    background-color: #f1f1f1;
+    border-bottom: solid 6px #fff;
+}
+
+.About_Us-titel{
+    padding-top: 60px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.About_Us-text{
+    width: 980px;
+    padding-top: 0px;
+    letter-spacing: -0.2px;
+    line-height: 1.7;
+    word-spacing: 1px;
+}
+
+.people{
+    margin-top: 26px;;
+    width: 300px;
+}
+
+.people-img{
+    width: 300px;
+    height: 300px;
+}
+
+.people-name{
+    font-weight: 900;
+    font-size: 18px;
+    padding-top: 10px;
+    margin-left: -1px;
+}
+
+.people-info{
+    font-size: 12px;
+    font-weight: 400px;
+    line-height: 1.8;
+
+    position: relative;
+    top:-3px;
+    width: 305px;
+}
+
+.people-accounts{
+    position: relative;
+    top: 8px;
+    margin-right: 5px;
+}
