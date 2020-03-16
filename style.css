@@ -32,6 +32,9 @@ h1, h2 , h3{
     background-color:#2d303a;
     border-bottom: solid 6px #323746;
     height: 88.5px;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
 }
 
 .header__inner {
@@ -89,7 +92,7 @@ li:last-child{
     color: #ffffff;
     text-decoration: none;
 }
-.first{
+.active{
     color: #F06C64;
 }
 
@@ -102,23 +105,73 @@ li:last-child{
     background-color:#f06c64;
     border-bottom: solid 6px #ea676b;
     height: 594px;
+
+}
+.blue {
+  background-color:#648BF0;
+  border-bottom: solid 6px #ea676b;
+  height: 594px;
+
 }
 
-.phones_img {
-    margin-left: 40px;
-    margin-top: 25px;
+
+#slider-item2{
+  position: absolute;
+  top: 94px;
+  left: 103px;
+
+z-index: 3;
+}
+
+.vertical{
+position: absolute;
+top: 118px;
+left: 200px;
+z-index: 1;
+}
+
+.gorizont{
+  position: absolute;
+right: 225px;
+top: 257px;
+z-index: 1;
+}
+
+
+#rectangle1 {
+  z-index: 2;
+  width: 190px;
+  height: 335px;
+  background: black;
+  position: absolute;
+  top: 210px;
+  left: 245px;
+}
+.none{
+  display: none;
+}
+#rectangle2 {
+  z-index: 2;
+  width: 333px;
+  height: 190px;
+  background: black;
+  position: absolute;
+  right: 325px;
+  top: 282px;
 }
 
 .arrow_left {
   position: absolute;
     left: 163px;
     top: 375px;
+    z-index: 4;
 }
 
 .arrow_right {
     position: absolute;
     right: 163px;
     top: 375px;
+    z-index: 4;
 }
 
 .arrow_left:hover, .arrow_right:hover {
@@ -248,7 +301,7 @@ li:last-child{
     border-color: #fff;
 }
 
-.tag:hover{
+ .activv{
     color:#fff;
     border-color: #fff; 
 }
@@ -263,6 +316,10 @@ li:last-child{
     width: 220px;
     height: 187px;
     margin-bottom: 20px;    
+}
+
+.border{
+  border: solid 5px #F06C64;
 }
 
 /*------About US-------*/
@@ -573,3 +630,46 @@ li:last-child{
     top: -3px;
     margin-right: 3.5px;
   }
+
+
+  .modal-overlay {
+    width: 1020px;
+    height: 100%;
+    background-color: #80808066;
+    position: absolute;
+    top: 2800px;
+    z-index: 1;
+}
+
+.modal { 
+    width: 50%;
+    height: 50%;
+    margin: 50px auto 0;
+    background-color: #f3a4a0;
+    border: 2px solid grey;
+    border-radius: 5px;
+    z-index: 1;
+    font-family: "Lato", sans-serif;
+    color: wheat;
+    text-overflow: clip;
+    overflow: hidden;
+    padding: 5px 20px;
+}
+
+.modal p:first-child {
+    font-weight: bold;
+    font-size: 24px;
+}
+.modal p {
+    max-height: 157px;
+    overflow: hidden;
+}
+
+.modal p:nth-child(2) {
+    max-height: 20px;
+}
+
+.modal button {
+position: absolute;
+bottom: 109px;
+}

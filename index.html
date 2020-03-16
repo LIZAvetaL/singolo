@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+  
     <title>SINGOLO</title>
 </head>
 <body>
@@ -15,8 +16,8 @@
             <h1 class="header__logo">SINGOLO<span class="star">*</span></h1>
 
             <nav class="nav">
-                <ul>
-                <li><a class="nav__link first" href="#">Home</a></li>
+                <ul id="menu">
+                <li><a class="nav__link activ" href="#home">Home</a></li>
                 <li><a class="nav__link" href="#services">Services</a></li>
                 <li><a class="nav__link" href="#portfolio">Portfolio</a></li>
                 <li><a class="nav__link" href="#about">About</a></li>
@@ -27,10 +28,14 @@
     </div>
 </header>
 
-<section class="slider">
+<section class="slider" id="home">
     <div class="container">
-                <img  class="phones_img" src="./assets/phones.png">
-                <img class="arrow_left" src="./assets/left.png">
+        <div class="none" id="rectangle1"></div>
+        <div id="rectangle2"></div>
+                <div class="phones_img"><img  class="vertical" src="./assets/phone-right.png">
+                <img  class="gorizont " src="./assets/phone-left.png"></div>
+                <img  class="phones_img" id="slider-item2" src="./assets/Slider2.png" height="500">
+                <img class="arrow_left"  src="./assets/left.png">
                 <img class="arrow_right" src="./assets/right.png">
 
     </div>
@@ -100,25 +105,25 @@
         <h2 class="portfolio-titel">Portfolio</h2>
         <p class="portfolio-text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
         <div class="portfolio-tags">
-            <button class="tag first-tag">All</button>
-            <button class="tag">Web Design</button>
-            <button class="tag">Graphic Design</button>
-            <button class="tag">Artwork</button>
+            <button data-category="all" class="tag activv">All</button>
+            <button data-category="web" class="tag">Web Design</button>
+            <button data-category="graph" class="tag">Graphic Design</button>
+            <button  data-category="art" class="tag">Artwork</button>
           </div>
         
         <div class="flex-portfolio">                
-            <img class="portfolio-img " src="assets/portfolio-img/1.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/2.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/3.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/4.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/5.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/6.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/7.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/8.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/9.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/10.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/11.jpg">
-            <img class="portfolio-img" src="assets/portfolio-img/12.jpg">
+            <img data-category="graph" class="portfolio-img " src="assets/portfolio-img/1.jpg">
+            <img data-category="web" class="portfolio-img" src="assets/portfolio-img/2.jpg">
+            <img data-category="art" class="portfolio-img" src="assets/portfolio-img/3.jpg">
+            <img data-category="web" class="portfolio-img" src="assets/portfolio-img/4.jpg">
+            <img data-category=""class="portfolio-img" src="assets/portfolio-img/5.jpg">
+            <img data-category="graph" class="portfolio-img" src="assets/portfolio-img/6.jpg">
+            <img data-category="web" class="portfolio-img" src="assets/portfolio-img/7.jpg">
+            <img data-category="art" class="portfolio-img" src="assets/portfolio-img/8.jpg">
+            <img data-category="" class="portfolio-img" src="assets/portfolio-img/9.jpg">
+            <img data-category="web" class="portfolio-img" src="assets/portfolio-img/10.jpg">
+            <img data-category=""class="portfolio-img" src="assets/portfolio-img/11.jpg">
+            <img data-category="graph" class="portfolio-img" src="assets/portfolio-img/12.jpg">
         </div>
     </div>
 </section>
@@ -179,11 +184,20 @@
       <h2 class="h2-contacts">Get a Quote</h2>
       <p >Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       <div class="contact-form">
-        <form method="POST">
+        <div class="modal-overlay" hidden="true">
+            <div class="modal">
+                <p>Письмо отправлено </p>
+                <p></p>
+                <p></p>
+
+                <button type="button" id="ok-btn" class="submitbtn" value="submit" name="ok" >OK</button>             
+            </div>
+        </div>
+        <form method="POST" id="form-elem">
           <input type="text" name="name" placeholder="Name (Required)" required>
           <input type="email" name="email" placeholder="Email (Required)" required>
-          <input type="text" name="subject" placeholder="Subject">
-          <textarea name="message" placeholder="Describe your project in detail..." cols="30" rows="13"></textarea>
+          <input class="input-subject" type="text" name="subject" placeholder="Subject">
+          <textarea class="input-desc" name="message" placeholder="Describe your project in detail..." cols="30" rows="13"></textarea>
           <button type="submit" formmethod="POST">Submit</button>
         </form>
         <div class="contact-form_info">
@@ -212,5 +226,6 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
