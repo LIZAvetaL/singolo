@@ -17,7 +17,7 @@
 
             <nav class="nav">
                 <ul id="menu">
-                <li><a class="nav__link activ" href="#home">Home</a></li>
+                <li><a class="nav__link active" href="#home">Home</a></li>
                 <li><a class="nav__link" href="#services">Services</a></li>
                 <li><a class="nav__link" href="#portfolio">Portfolio</a></li>
                 <li><a class="nav__link" href="#about">About</a></li>
@@ -30,11 +30,26 @@
 
 <section class="slider" id="home">
     <div class="container">
-        <div class="none" id="rectangle1"></div>
+        <div id="rectangle1"></div>
         <div id="rectangle2"></div>
-                <div class="phones_img"><img  class="vertical" src="./assets/phone-right.png">
-                <img  class="gorizont " src="./assets/phone-left.png"></div>
-                <img  class="phones_img" id="slider-item2" src="./assets/Slider2.png" height="500">
+        <div class="phones activated">
+            <div class="vertical">
+                <img src="./assets/phone-right.png" alt="vertical iphone"> 
+                <div class="home-btn"></div>
+                <div class="black-screen" hidden='true'> </div>                   
+            </div>
+
+            <div class="horizontal">
+                <img src="./assets/phone-left.png" alt="horizontal iphone">
+                <div class="home-btn"></div>
+                <div class="black-screen" hidden='true'> </div> 
+            </div>
+
+        </div>
+
+        <div class="phones slide2">
+            <img src="./assets/Slider2.png" alt="vertical iphone" height="100"></div>
+                
                 <img class="arrow_left"  src="./assets/left.png">
                 <img class="arrow_right" src="./assets/right.png">
 

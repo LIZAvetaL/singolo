@@ -33,8 +33,8 @@ h1, h2 , h3{
     border-bottom: solid 6px #323746;
     height: 88.5px;
     position: fixed;
+    z-index: 2;
     width: 100%;
-    z-index: 5;
 }
 
 .header__inner {
@@ -107,71 +107,107 @@ li:last-child{
     height: 594px;
 
 }
-.blue {
-  background-color:#648BF0;
-  border-bottom: solid 6px #ea676b;
-  height: 594px;
-
-}
-
-
-#slider-item2{
-  position: absolute;
-  top: 94px;
-  left: 103px;
-
-z-index: 3;
-}
-
-.vertical{
-position: absolute;
-top: 118px;
-left: 200px;
-z-index: 1;
-}
-
-.gorizont{
-  position: absolute;
-right: 225px;
-top: 257px;
-z-index: 1;
-}
-
-
-#rectangle1 {
-  z-index: 2;
-  width: 190px;
+#rectangle1{
+  z-index: 1;
+  width: 192px;
   height: 335px;
   background: black;
   position: absolute;
-  top: 210px;
-  left: 245px;
-}
-.none{
+  top: 174px;
+  left: 315px;
   display: none;
 }
 #rectangle2 {
-  z-index: 2;
-  width: 333px;
+  z-index: 1;
+  width: 339px;
   height: 190px;
   background: black;
   position: absolute;
-  right: 325px;
-  top: 282px;
+  right: 276px;
+  top: 228px;
+  display: block;
+}
+.phones {
+  display: none;
+  position: relative;
+  animation: 0.5s ease-in-out;  
+  transition: all 0.5s;
+}
+
+.activated, .next {
+  display: block;
+  position: absolute;
+  width: 100%;  
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+      left: 0;
+  } 
+  to {
+      left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+      left: 100%;
+  } 
+  to {
+      left: 0;
+  }
+}
+
+.vertical{
+  position: absolute;
+  top: 82px;
+  left: 111px;
+}
+
+.horizontal{
+  position: absolute;
+  top: 203px;
+  left: 424px;
+}
+
+.slide2 img {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  height: 594px;
+  z-index: 1;
 }
 
 .arrow_left {
   position: absolute;
     left: 163px;
     top: 375px;
-    z-index: 4;
+z-index: 2;
 }
 
 .arrow_right {
     position: absolute;
     right: 163px;
     top: 375px;
-    z-index: 4;
+    z-index: 2;
 }
 
 .arrow_left:hover, .arrow_right:hover {

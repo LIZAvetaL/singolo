@@ -15,58 +15,72 @@ for (let anchor of anchors){
 }
 
 /*---Slider---*/
-let slider = document.getElementsByClassName("slider");
-const ARROW_RIGHT=document.querySelector('.arrow_right');
-const ARROW_LEFT=document.querySelector('.arrow_left');
-var slideIndex = 1;
-showSlides(slideIndex);
+let phones = document.querySelectorAll('.phones');
+let currentSlide = 0;
+let isEnabled = true;
 
-ARROW_LEFT.addEventListener('click', function (e) {
-    plusSlides(-1);
-    if (slider[0].classList[1] == "blue") {
-        slider[0].classList.remove('blue');
-    }
-    else { slider[0].classList.add('blue'); }
-});
-ARROW_RIGHT.addEventListener('click', function (e) {
-    plusSlides(1);
-    if (slider[0].classList[1] == "blue") {
-        slider[0].classList.remove('blue');
-    }
-    else { slider[0].classList.add('blue'); }
-});
-
-function plusSlides(n) {
-
-    showSlides(slideIndex += n);
+function changeCurrentSlide (n) {
+    currentSlide = ( n + phones.length ) % phones.length;    
 }
 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("phones_img");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
+function hideSlide(direction) {
+    isEnabled = false; 
+    phones[currentSlide].classList.add(direction);
+    phones[currentSlide].addEventListener('animationend', function() {
+        this.classList.remove('activated', direction);
+    })
 }
+
+
+function showSlide(direction) {
+    phones[currentSlide].classList.add('next', direction);
+    phones[currentSlide].addEventListener('animationend', function() {
+        this.classList.remove('next', direction);
+        this.classList.add('activated');
+        isEnabled = true; 
+    })
+
+}
+
+function previousSlide (n) {
+   hideSlide('to-right');
+   changeCurrentSlide(n-1);
+   showSlide('from-left');  
+}
+
+function nextSlide (n) {
+    hideSlide('to-left');
+    changeCurrentSlide(n+1);   
+    showSlide('from-right');  
+ }
+
+document.querySelector('.arrow_left').addEventListener('click', function() {
+   if (isEnabled) {
+       previousSlide(currentSlide);
+   }
+})
+
+document.querySelector('.arrow_right').addEventListener('click', function() {
+    if (isEnabled) {
+        nextSlide(currentSlide);
+    }
+ })
 
 /*-------Phones---------*/
 const DISPLAY_VERTICAL=document.getElementById('rectangle1');
 const PHONE_VERTICAL=document.querySelector('.vertical');
 PHONE_VERTICAL.addEventListener('click', function (e) {
-    if(DISPLAY_VERTICAL.classList=='none')
-    DISPLAY_VERTICAL.classList.remove('none');
-    else DISPLAY_VERTICAL.classList.add('none');
+    if(DISPLAY_VERTICAL.style.display=='none')
+    DISPLAY_VERTICAL.style.display='block'
+    else DISPLAY_VERTICAL.style.display='none';
 });
 
-const DISPLAY_GORIZONT=document.getElementById('rectangle2');
-const PHONE_GORIZONT=document.querySelector('.gorizont');
-PHONE_GORIZONT.addEventListener('click', function (e) {
-    if(DISPLAY_GORIZONT.classList=='none')
-    DISPLAY_GORIZONT.classList.remove('none');
-    else DISPLAY_GORIZONT.classList.add('none');
+const DISPLAY_HORIZONT=document.getElementById('rectangle2');
+const PHONE_HORIZONT=document.querySelector('.horizontal');
+PHONE_HORIZONT.addEventListener('click', function (e) {
+    if(DISPLAY_HORIZONT.style.display=='none')
+    DISPLAY_HORIZONT.style.display=='block';
+    else DISPLAY_HORIZONT.style.display=='none';
 });
 
 /*------PORTFOLIO--IMG--Border---*/
