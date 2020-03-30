@@ -67,20 +67,28 @@ document.querySelector('.arrow_right').addEventListener('click', function() {
  })
 
 /*-------Phones---------*/
-const DISPLAY_VERTICAL=document.getElementById('rectangle1');
+const DISPLAY_VERTICAL=document.querySelector('.verticalOff');
 const PHONE_VERTICAL=document.querySelector('.vertical');
 PHONE_VERTICAL.addEventListener('click', function (e) {
-    if(DISPLAY_VERTICAL.style.display=='none')
-    DISPLAY_VERTICAL.style.display='block'
-    else DISPLAY_VERTICAL.style.display='none';
+    PHONE_VERTICAL.style.display='none';
+    DISPLAY_VERTICAL.style.display='block';
 });
 
-const DISPLAY_HORIZONT=document.getElementById('rectangle2');
+DISPLAY_VERTICAL.addEventListener('click', function (e) {
+    DISPLAY_VERTICAL.style.display='none';
+    PHONE_VERTICAL.style.display='block';
+});
+
+const DISPLAY_HORIZONT=document.querySelector('.horizontalOff');
 const PHONE_HORIZONT=document.querySelector('.horizontal');
 PHONE_HORIZONT.addEventListener('click', function (e) {
-    if(DISPLAY_HORIZONT.style.display=='none')
-    DISPLAY_HORIZONT.style.display=='block';
-    else DISPLAY_HORIZONT.style.display=='none';
+    PHONE_HORIZONT.style.display='none';
+    DISPLAY_HORIZONT.style.display='block';
+});
+
+DISPLAY_HORIZONT.addEventListener('click', function (e) {
+    DISPLAY_HORIZONT.style.display='none';
+    PHONE_HORIZONT.style.display='block';
 });
 
 /*------PORTFOLIO--IMG--Border---*/

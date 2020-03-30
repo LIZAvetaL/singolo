@@ -107,26 +107,7 @@ li:last-child{
     height: 594px;
 
 }
-#rectangle1{
-  z-index: 1;
-  width: 192px;
-  height: 335px;
-  background: black;
-  position: absolute;
-  top: 174px;
-  left: 315px;
-  display: none;
-}
-#rectangle2 {
-  z-index: 1;
-  width: 339px;
-  height: 190px;
-  background: black;
-  position: absolute;
-  right: 276px;
-  top: 228px;
-  display: block;
-}
+
 .phones {
   display: none;
   position: relative;
@@ -183,6 +164,19 @@ li:last-child{
 }
 
 .horizontal{
+  position: absolute;
+  top: 203px;
+  left: 424px;
+}
+.verticalOff{
+  display: none;
+  position: absolute;
+  top: 82px;
+  left: 111px;
+}
+
+.horizontalOff{
+  display: none;
   position: absolute;
   top: 203px;
   left: 424px;
